@@ -24,7 +24,15 @@ module.exports = {
                     name: 'vendor',
                     chunks: 'all',
                     minSize: 0,
-                    minChunks: 1
+                    minChunks: 1,
+                    priority: 2
+                },
+                common: {
+                    name: 'common',
+                    chunks: 'all',
+                    minSize: 0,
+                    minChunks: 2,
+                    priority: 1
                 }
             }
         }
