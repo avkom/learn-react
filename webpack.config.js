@@ -13,5 +13,19 @@ module.exports = {
         extensions: ['.js']
     },
 
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /node_modules/,
+                    name: 'vendor',
+                    chunks: 'all',
+                    minSize: 0,
+                    minChunks: 1
+                }
+            }
+        }
+    },
+
     watch: false
 };
