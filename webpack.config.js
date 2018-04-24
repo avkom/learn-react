@@ -1,11 +1,12 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     context: path.join(__dirname, 'src'),
     mode: 'development',
-    devtool: 'none',
+    devtool: 'eval',
 
-    entry: './index.js',
+    entry: './index.jsx',
 
     output: {
         filename: 'bundle.js',
@@ -13,7 +14,23 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.js']
+        extensions: ['.js', '.jsx']
+    },
+
+    module: {
+        rules: [
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        plugins: ["transform-react-jsx"],
+                        presets: ['env']
+                    }
+                }
+            }
+        ]
     },
 
     optimization: {
@@ -37,6 +54,14 @@ module.exports = {
             }
         }
     },
+
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'netflixroulette',
+            hash: true,
+            template: './index.html'
+        })
+    ],
 
     watch: false
 };
