@@ -17,8 +17,7 @@ Run `webpack` to rebuild and then refresh the page.
 
 ## Run in deveopment mode and rebuild when a file saved
 ```
-webpack -w
-dist\index.html
+npm start
 ```
 Just save a source file and refresh a page.
 Press Ctrl+C in console to stop watching the files.
