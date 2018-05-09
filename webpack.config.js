@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     context: path.join(__dirname, 'src'),
@@ -29,6 +30,13 @@ module.exports = {
                         presets: ['env']
                     }
                 }
+            },
+            {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: 'css-loader'
+                })
             }
         ]
     },
@@ -60,7 +68,8 @@ module.exports = {
             title: 'netflixroulette',
             hash: true,
             template: './index.html'
-        })
+        }),
+        new ExtractTextPlugin('[name].css')
     ],
 
     watch: false
