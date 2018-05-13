@@ -77,6 +77,6 @@ module.exports = {
     ],
 
     devServer: {
-        hot: false // To make browser page reloaded automatically when JavaScript is changed.
+        hot: false // To make browser page reloaded automatically when JavaScript source is changed.
     }
 };
