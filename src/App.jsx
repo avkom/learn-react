@@ -6,6 +6,7 @@ export default class App extends React.Component {
         return (
             <ErrorBoundary>
                 <h1>Hello, React!</h1>
-            </ErrorBoundary>);
+            </ErrorBoundary>
+        );
     }
 }
