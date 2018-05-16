@@ -8,7 +8,7 @@ export default class FilmList extends React.Component {
                 {
                     this.props.items.map(
                         (item) => {
-                            <FilmMiniCard value={item} />
+                            <FilmMiniCard key={item.id} value={item} />
                         }
                     )
                 }

@@ -12,7 +12,7 @@ export default class Toggle extends React.Component {
                     this.props.items.map(
                         (item) => {
                             return (
-                                <label>
+                                <label key={item.value}>
                                     <input 
                                         type='radio' 
                                         value={item.value} 
