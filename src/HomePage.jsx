@@ -7,18 +7,27 @@ import FilmList from './FilmList';
 export default class HomePage extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            totalCount: 0,
+            films: []
+        };
     }
     
     handleSearch = (searchRequest) => {
-        console.dir(searchRequest);
+        this.setState({
+            totalCount: 7,
+            films: [
+            ]
+        });
     }
     
     render() {
         return (
             <div>
                 <Header />
-                <SearchHeader onSearch={this.handleSearch}/>
-                <FilmList items={[]}/>
+                <SearchHeader totalCount={this.state.totalCount} onSearch={this.handleSearch}/>
+                <FilmList items={this.state.films}/>
                 <Footer />
             </div>
         );
