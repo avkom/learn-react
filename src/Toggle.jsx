@@ -4,8 +4,8 @@ export default class Toggle extends React.Component {
     render() {
         return (
             <div>
-                <button type='button'>Title</button>
-                <button type='button'>Genre</button>
+                <input type='radio' />Title
+                <input type='radio' />Genre
             </div>
         );
     }
