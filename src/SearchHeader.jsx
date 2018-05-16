@@ -47,7 +47,7 @@ export default class SearchHeader extends React.Component {
     render() {
         return (
             <div>
-                <div>Find your moovie</div>
+                <div>Find your movie</div>
                 <input type='text' value={this.state.term} onChange={this.handleTermChange} />
                 <div>
                     <span>Search by</span>
