@@ -18,7 +18,7 @@ export default class FilmDetailsPage extends React.Component {
     }
     
     componentDidMount() {
-        this.apiClient.getFilmById('412302').then(this.setFilm);
+        this.apiClient.getFilmById('680').then(this.setFilm);
     }
 
     setFilm = response =>
@@ -39,7 +39,9 @@ export default class FilmDetailsPage extends React.Component {
         return (
             <div>
                 <Header />
+                <a href='javascript:void(0)'>Search</a>
                 {this.state.film && <FilmDetails {...this.state.film}/>}
+                {this.state.filmsByGenre && <hr />}
                 {this.state.filmsByGenre && <div>Films by {this.state.film.genres[0]} genre</div>}
                 {this.state.filmsByGenre && <FilmList items={this.state.filmsByGenre}/>}
                 <Footer />
