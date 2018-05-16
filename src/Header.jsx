@@ -6,6 +6,7 @@ export default class Header extends React.Component {
         return (
             <header>
                 <Logo />
+                <hr />
             </header>
         );
     }
