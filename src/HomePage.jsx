@@ -15,7 +15,8 @@ export default class HomePage extends React.Component {
     }
     
     handleSearch = (searchRequest) => {
-        window.fetch('http://react-cdp-api.herokuapp.com/movies')
+        let url = this.buildUrl('http://react-cdp-api.herokuapp.com/movies', searchRequest);
+        window.fetch(url)
             .then(response => response.json())
             .then(result =>
                 this.setState({
@@ -23,6 +24,12 @@ export default class HomePage extends React.Component {
                     films: result.data
                 })
             );
+    }
+
+    buildUrl(baseUrl, params) {
+        return baseUrl + '?' + Object.keys(params)
+            .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
+            .join('&');
     }
 
     render() {
