@@ -5,11 +5,19 @@ import SearchHeader from './SearchHeader';
 import FilmList from './FilmList';
 
 export default class HomePage extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    
+    handleSearch = () => {
+        console.log('Click happened');
+    }
+    
     render() {
         return (
             <div>
                 <Header />
-                <SearchHeader />
+                <SearchHeader onSearch={this.handleSearch}/>
                 <FilmList />
                 <Footer />
             </div>

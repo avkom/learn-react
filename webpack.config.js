@@ -27,7 +27,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        plugins: ["transform-react-jsx"],
+                        plugins: ["transform-react-jsx", "transform-class-properties"],
                         presets: ['env']
                     }
                 }
