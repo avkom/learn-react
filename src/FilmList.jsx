@@ -5,12 +5,13 @@ export default class FilmList extends React.Component {
     render() {
         return (
             <div>
-                <FilmMiniCard />
-                <FilmMiniCard />
-                <FilmMiniCard />
-                <FilmMiniCard />
-                <FilmMiniCard />
-                <FilmMiniCard />
+                {
+                    this.props.items.map(
+                        (item) => {
+                            <FilmMiniCard value={item} />
+                        }
+                    )
+                }
             </div>
         );
     }

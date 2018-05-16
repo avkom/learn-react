@@ -54,13 +54,16 @@ export default class SearchHeader extends React.Component {
                     <Toggle value={this.state.searchBy} items={this.searchByItems} onChange={this.handleSearchByChange} />
                     <button type='button' onClick={this.handleSearchClick}>Search</button>
                 </div>
-                <div>
-                    <span>{this.props.resultCount} movies found</span>
-                    <div>
-                        <span>Sort by</span>
-                        <Toggle value={this.state.sortBy} items={this.sortByItems} onChange={this.handleSortByChange} />
-                    </div>
-                </div>
+                {this.state.resultCount && (
+                        <div>
+                            <span>{this.props.resultCount} movies found</span>
+                            <div>
+                                <span>Sort by</span>
+                                <Toggle value={this.state.sortBy} items={this.sortByItems} onChange={this.handleSortByChange} />
+                            </div>
+                        </div>
+                    )
+                }
             </div>
         );
     }

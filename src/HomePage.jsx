@@ -18,7 +18,7 @@ export default class HomePage extends React.Component {
             <div>
                 <Header />
                 <SearchHeader onSearch={this.handleSearch}/>
-                <FilmList />
+                <FilmList items={[]}/>
                 <Footer />
             </div>
         );
