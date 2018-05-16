@@ -3,6 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import SearchHeader from './SearchHeader';
 import FilmList from './FilmList';
+import ApiClient from './ApiClient';
 
 export default class HomePage extends React.Component {
     constructor(props) {
@@ -12,24 +13,18 @@ export default class HomePage extends React.Component {
             totalCount: 0,
             films: []
         };
+
+        this.apiClient = new ApiClient();
     }
     
     handleSearch = (searchRequest) => {
-        let url = this.buildUrl('http://react-cdp-api.herokuapp.com/movies', searchRequest);
-        window.fetch(url)
-            .then(response => response.json())
+        this.apiClient.getFilms(searchRequest)
             .then(result =>
                 this.setState({
                     totalCount: result.total,
                     films: result.data
                 })
             );
-    }
-
-    buildUrl(baseUrl, params) {
-        return baseUrl + '?' + Object.keys(params)
-            .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
-            .join('&');
     }
 
     render() {
