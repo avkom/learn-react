@@ -3,6 +3,7 @@ My educational project to learn React, Redux, NPM, Webpack, Babel etc.
 
 ## Setup local environment
 
+- Install `git`.
 - Install `Node.js`.
 - `git clone https://github.com/avkom/learn-react.git`
 - `cd learn-react`
@@ -17,7 +18,7 @@ My educational project to learn React, Redux, NPM, Webpack, Babel etc.
 
 ## Make production build
 - Run `npm i webpack webpack-cli -g` once to install webpack command line interface globally.
-- Run `webpack -p` to build and the result will be in `dist` folder.
+- Run `npm prod-build`. The results of the build will be in `dist` folder.
 
 ## Run tests
 - Run `npm test`.
