@@ -25,6 +25,12 @@ export default class SearchHeader extends React.Component {
     handleTermChange = (event) => {
         this.setState({term: event.target.value});
     }
+
+    handleTermKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            this.handleSearchClick();
+        }
+    }
     
     handleSearchByChange = (value) => {
         this.setState({searchBy: value});
@@ -48,7 +54,7 @@ export default class SearchHeader extends React.Component {
         return (
             <div>
                 <div>Find your movie</div>
-                <input type='text' value={this.state.term} onChange={this.handleTermChange} />
+                <input type='text' value={this.state.term} onChange={this.handleTermChange} onKeyPress={this.handleTermKeyPress}/>
                 <div>
                     <span>Search by</span>
                     <Toggle value={this.state.searchBy} items={this.searchByItems} onChange={this.handleSearchByChange} />
