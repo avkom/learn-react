@@ -17,15 +17,16 @@ export default class HomePage extends React.Component {
         this.apiClient = new ApiClient();
     }
     
-    handleSearch = (searchRequest) => {
-        this.apiClient.getFilms(searchRequest)
-            .then(result =>
-                this.setState({
-                    totalCount: result.total,
-                    films: result.data
-                })
-            );
+    handleSearch = searchRequest => {
+        this.apiClient.getFilms(searchRequest).then(this.setStateUsingSearchResponse);
     }
+
+    setStateUsingSearchResponse = result => {
+        this.setState({
+            totalCount: result.total,
+            films: result.data
+        });
+    } 
 
     render() {
         return (
