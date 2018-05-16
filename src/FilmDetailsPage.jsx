@@ -28,7 +28,7 @@ export default class FilmDetailsPage extends React.Component {
     }
 
     loadFilmsByGenre = film => {
-        this.apiClient.getFilms({searchBy: 'genres', search: response.genres[0]}).then(this.setFilmsByGenre);
+        this.apiClient.getFilms({searchBy: 'genres', search: film.genres[0]}).then(this.setFilmsByGenre);
     }
 
     setFilmsByGenre = response => {
