@@ -4,7 +4,7 @@ import Toggle from './Toggle';
 export default class SearchHeader extends React.Component {
     searchByItems = [
         {value: 'title', label: 'Title'},
-        {value: 'genres', label:'Genre'}
+        {value: 'genre', label:'Genre'}
     ];
 
     sortByItems = [
