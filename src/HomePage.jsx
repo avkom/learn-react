@@ -15,13 +15,16 @@ export default class HomePage extends React.Component {
     }
     
     handleSearch = (searchRequest) => {
-        this.setState({
-            totalCount: 7,
-            films: [
-            ]
-        });
+        window.fetch('http://react-cdp-api.herokuapp.com/movies')
+            .then(response => response.json())
+            .then(result =>
+                this.setState({
+                    totalCount: result.total,
+                    films: result.data
+                })
+            );
     }
-    
+
     render() {
         return (
             <div>
