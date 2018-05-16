@@ -9,8 +9,8 @@ export default class HomePage extends React.Component {
         super(props);
     }
     
-    handleSearch = () => {
-        console.log('Click happened');
+    handleSearch = (searchRequest) => {
+        console.dir(searchRequest);
     }
     
     render() {
