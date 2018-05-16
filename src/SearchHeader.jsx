@@ -12,6 +12,13 @@ export default class SearchHeader extends React.Component {
                     <Toggle />
                     <button type='button'>Search</button>
                 </div>
+                <div>
+                    <span>7 movies found</span>
+                    <div>
+                        <span>Sort by</span>
+                        <Toggle />
+                    </div>
+                </div>
             </div>
         );
     }
