@@ -7,7 +7,7 @@ export const RECEIVE_FILM_BY_ID = 'RECEIVE_FILM_BY_ID';
 
 export function requestFilms(searchRequest) {
     return function(dispatch) {
-        return new ApiClient().getFilms(searchRequest).then(json => 
+        return ApiClient.getFilms(searchRequest).then(json => 
             dispatch(receiveFilms(json)));
     };
 }
@@ -22,7 +22,7 @@ export function receiveFilms(json) {
 
 export function requestFilmById(id) {
     return function(dispatch) {
-        return new ApiClient().getFilmById(id).then(json => {
+        return ApiClient.getFilmById(id).then(json => {
             dispatch(receiveFilmById(json));
             dispatch(requestFilms({searchBy: 'genres', search: json.genres[0]}));
         });
