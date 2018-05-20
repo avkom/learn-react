@@ -7,7 +7,7 @@ export default class App extends React.Component {
     render() {
         return (
             <ErrorBoundary>
-                <FilmDetailsPage />
+                <HomePage />
                 {/* <FilmDetailsPage /> */}
             </ErrorBoundary>
         );
