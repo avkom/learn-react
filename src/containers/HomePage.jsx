@@ -1,11 +1,12 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import SearchHeader from './SearchHeader';
-import FilmList from './FilmList';
+import {connect} from 'react-redux';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import SearchHeader from '../components/SearchHeader';
+import FilmList from '../components/FilmList';
 import ApiClient from '../services/ApiClient';
 
-export default class HomePage extends React.Component {
+class HomePage extends React.Component {
     constructor(props) {
         super(props);
 
@@ -39,3 +40,5 @@ export default class HomePage extends React.Component {
         );
     }
 }
+
+export default connect()(HomePage);
