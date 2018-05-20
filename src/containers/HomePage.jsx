@@ -41,4 +41,9 @@ class HomePage extends React.Component {
     }
 }
 
-export default connect()(HomePage);
+const mapStateToProps = (state) => ({
+    films: state.films,
+    totalCount: state.totalCount
+});
+
+export default connect(mapStateToProps)(HomePage);
