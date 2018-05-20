@@ -3,7 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import FilmDetails from './FilmDetails';
 import FilmList from './FilmList';
-import ApiClient from './ApiClient';
+import ApiClient from '../services/ApiClient';
 
 export default class FilmDetailsPage extends React.Component {
     constructor(props) {

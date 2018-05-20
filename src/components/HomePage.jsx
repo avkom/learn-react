@@ -3,7 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import SearchHeader from './SearchHeader';
 import FilmList from './FilmList';
-import ApiClient from './ApiClient';
+import ApiClient from '../services/ApiClient';
 
 export default class HomePage extends React.Component {
     constructor(props) {
