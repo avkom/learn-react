@@ -12,15 +12,11 @@ export default class SearchHeader extends React.Component {
         {value: 'vote_average', label:'rating'}
     ];
     
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            term: '',
-            searchBy: 'title',
-            sortBy: 'vote_average'
-        };
-    }
+    state = {
+        term: '',
+        searchBy: 'title',
+        sortBy: 'vote_average'
+    };
 
     handleTermChange = (event) => {
         this.setState({term: event.target.value});
