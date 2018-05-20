@@ -1,8 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App'
+import {render} from 'react-dom';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import filmsApp from './reducers';
+import App from './components/App';
 
-ReactDOM.render(
-    <App />,
+const store = createStore(state => state);
+
+render(
+    <Provider store={store} >
+        <App />
+    </Provider>,
     document.getElementById('app')
 );
