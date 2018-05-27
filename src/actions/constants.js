@@ -1,3 +1,6 @@
+export const TERM_CHANGE = 'TERM_CHANGE';
+export const SEARCH_BY_CHANGE = 'SEARCH_BY_CHANGE';
+export const SORT_BY_CHANGE = 'SORT_BY_CHANGE';
 export const REQUEST_FILMS = 'REQUEST_FILMS';
 export const RECEIVE_FILMS = 'RECEIVE_FILMS';
 export const REQUEST_FILM_BY_ID = 'REQUEST_FILM_BY_ID';

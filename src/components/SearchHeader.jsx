@@ -12,15 +12,7 @@ export default class SearchHeader extends React.Component {
         {value: 'vote_average', label:'rating'}
     ];
     
-    state = {
-        term: '',
-        searchBy: 'title',
-        sortBy: 'vote_average'
-    };
-
-    handleTermChange = (event) => {
-        this.setState({term: event.target.value});
-    }
+    termRef = React.createRef();
 
     handleTermKeyPress = (event) => {
         if (event.key === 'Enter') {
@@ -29,31 +21,25 @@ export default class SearchHeader extends React.Component {
     }
     
     handleSearchByChange = (value) => {
-        this.setState({searchBy: value});
+        this.props.onSearchByChange(value);
     }
 
     handleSortByChange = (value) => {
-        this.setState({sortBy: value});
+        this.props.onSortByChange(value);
     }
 
     handleSearchClick = () => {
-        let searchRequest = {
-            search: this.state.term,
-            searchBy: this.state.searchBy,
-            sortBy: this.state.sortBy
-        };
-
-        this.props.onSearch(searchRequest);
+        this.props.onSearch(this.termRef.current.value);
     }
 
     render() {
         return (
             <div>
                 <div>Find your movie</div>
-                <input type='text' value={this.state.term} onChange={this.handleTermChange} onKeyPress={this.handleTermKeyPress}/>
+                <input type='text' defaultValue={this.props.term} ref={this.termRef} onKeyPress={this.handleTermKeyPress}/>
                 <div>
                     <span>Search by</span>
-                    <Toggle value={this.state.searchBy} items={this.searchByItems} onChange={this.handleSearchByChange} />
+                    <Toggle value={this.props.searchBy} items={this.searchByItems} onChange={this.handleSearchByChange} />
                     <button type='button' onClick={this.handleSearchClick}>Search</button>
                 </div>
                 {this.props.totalCount > 0 && (
@@ -61,7 +47,7 @@ export default class SearchHeader extends React.Component {
                             <span>{this.props.totalCount} movies found</span>
                             <div>
                                 <span>Sort by</span>
-                                <Toggle value={this.state.sortBy} items={this.sortByItems} onChange={this.handleSortByChange} />
+                                <Toggle value={this.props.sortBy} items={this.sortByItems} onChange={this.handleSortByChange} />
                             </div>
                         </div>
                     )
