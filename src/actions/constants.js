@@ -1,0 +1,4 @@
+export const REQUEST_FILMS = 'REQUEST_FILMS';
+export const RECEIVE_FILMS = 'RECEIVE_FILMS';
+export const REQUEST_FILM_BY_ID = 'REQUEST_FILM_BY_ID';
+export const RECEIVE_FILM_BY_ID = 'RECEIVE_FILM_BY_ID';

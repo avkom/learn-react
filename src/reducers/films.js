@@ -1,4 +1,4 @@
-import {RECEIVE_FILMS} from '../actions';
+import {RECEIVE_FILMS} from '../actions/constants';
 
 const films = (state = [], action) => {
     switch (action.type) {
